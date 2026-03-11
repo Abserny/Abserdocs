@@ -7,7 +7,6 @@
 ![Expo](https://img.shields.io/badge/built%20with-Expo%20SDK%2054-000020?style=flat-square&logo=expo&logoColor=white)
 ![AI](https://img.shields.io/badge/AI-Gemini%202.0%20Flash-4285F4?style=flat-square&logo=google&logoColor=white)
 ![Languages](https://img.shields.io/badge/language-Arabic%20%2B%20English-00BFFF?style=flat-square)
-![License](https://img.shields.io/badge/license-MIT-A78BFA?style=flat-square)
 
 [Website](https://abserny.github.io/abserny.com/) · [Download APK](https://github.com/abserny/Abserny-Mobile/releases/latest) · [Issues](https://github.com/abserny/Abserny-Mobile/issues)
 
