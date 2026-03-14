@@ -1,7 +1,8 @@
-# Abserny · أبصرني
-> Gesture-driven AI vision assistant for the visually impaired.
-
 <div align="center">
+    <p>
+        <strong>أبصرني · Abserny</strong><br />
+        AI-powered vision assistant for the visually impaired
+    </p>
 
 ![Platform](https://img.shields.io/badge/platform-Android-3DDC84?style=flat-square&logo=android&logoColor=white)
 ![Expo](https://img.shields.io/badge/built%20with-Expo%20SDK%2054-000020?style=flat-square&logo=expo&logoColor=white)
@@ -114,17 +115,17 @@ This architecture represents the **idea**, not the repository layout.
 ## 5. Execution Flow (Conceptual)
 
 ```
-  User
-   │
-   ├─ Gesture Trigger
-   │        │
-   │   System captures frame
-   │        │
-   │   JPEG Base64 → AI Model
-   │        │
-   │   Contextual Description
-   │        │
-   └─ Speech + Haptic Response
+User
+│
+├─ Gesture Trigger
+│        │
+│   System captures frame
+│        │
+│   JPEG Base64 → AI Model
+│        │
+│   Contextual Description
+│        │
+└─ Speech + Haptic Response
 ```
 
 [↑ Back to Top](#table-of-contents)
@@ -152,15 +153,15 @@ Abserny exists as multiple **variants**, each adapting the same conceptual pipel
 ### 7.1 Desktop Architecture
 
 ```
-  USB Camera
-      │
-   OpenCV  (frame capture)
-      │
-    YOLO    (object detection)
-      │
-  Reasoner  (natural language)
-   ┌──┴──┐
-  TTS   CLI
+USB Camera
+│
+OpenCV  (frame capture)
+│
+YOLO    (object detection)
+│
+Reasoner  (natural language)
+┌──┴──┐
+TTS   CLI
 ```
 
 **Characteristics:**
@@ -173,23 +174,23 @@ Abserny exists as multiple **variants**, each adapting the same conceptual pipel
 ### 7.2 Mobile Architecture
 
 ```
-  Android Camera
-        │
-   GestureHandler  (PanResponder)
-        │
-   FrameCapture    (takePictureAsync — quality 0.35)
-        │
-   DetectionRouter
-    ┌───┴──────────────┐
-    │ Online           │ Offline
-    │                  │
- Gemini 2.0         ML Kit
- Flash Lite         On-Device
-    └───┬──────────────┘
-        │
-   SpeechQueue     (never overlaps)
-    ┌───┴──────┐
- expo-speech  expo-haptics
+Android Camera
+│
+GestureHandler  (PanResponder)
+│
+FrameCapture    (takePictureAsync — quality 0.35)
+│
+DetectionRouter
+┌───┴──────────────┐
+│ Online           │ Offline
+│                  │
+Gemini 2.0         ML Kit
+Flash Lite         On-Device
+└───┬──────────────┘
+│
+SpeechQueue     (never overlaps)
+┌───┴──────┐
+expo-speech  expo-haptics
 ```
 
 **Characteristics:**
@@ -207,35 +208,35 @@ Abserny exists as multiple **variants**, each adapting the same conceptual pipel
 ### 8.1 Desktop Flow
 
 ```
-  App Starts
-      │
-  Load Config (Camera ID, YOLO Model)
-      │
-  Create VisionSupervisor
-      │
-  Initialize Services
-  ┌───┼──────────┬──────────────┐
-  │   │          │              │
- Cam YOLO     Audio          Vosk SR
-  └───┴──────────┴──────────────┘
-      │
-  Warm Up → TTS: "Ready, say start"
-      │
-  ┌─ Listening Loop ──────────────────────┐
-  │                                       │
-  │  Mic → Vosk → Trigger word?           │
-  │                    │ Yes              │
-  │             Cooldown active? ──Yes──► │
-  │                    │ No               │
-  │             Capture Frame             │
-  │                    │                  │
-  │             YOLO → Detect Objects     │
-  │                    │                  │
-  │             Generate Description      │
-  │                    │                  │
-  │             TTS speaks result         │
-  │                    │                  │
-  └────────────────────┴──────────────────┘
+App Starts
+│
+Load Config (Camera ID, YOLO Model)
+│
+Create VisionSupervisor
+│
+Initialize Services
+┌───┼──────────┬──────────────┐
+│   │          │              │
+Cam YOLO     Audio          Vosk SR
+└───┴──────────┴──────────────┘
+│
+Warm Up → TTS: "Ready, say start"
+│
+┌─ Listening Loop ──────────────────────┐
+│                                       │
+│  Mic → Vosk → Trigger word?           │
+│                    │ Yes              │
+│             Cooldown active? ──Yes──► │
+│                    │ No               │
+│             Capture Frame             │
+│                    │                  │
+│             YOLO → Detect Objects     │
+│                    │                  │
+│             Generate Description      │
+│                    │                  │
+│             TTS speaks result         │
+│                    │                  │
+└────────────────────┴──────────────────┘
 ```
 
 ---
@@ -243,47 +244,47 @@ Abserny exists as multiple **variants**, each adapting the same conceptual pipel
 ### 8.2 Mobile Flow
 
 ```
-  App Launches
-      │
-  First launch? ──Yes──► Language Picker (swipe R/L)
-      │                          │
-      │                  Gesture Tutorial (9 steps)
-      │                          │
-  ◄───┴──────────────────────────┘
-      │
-  Main Camera Screen
-      │
-  Pre-warm TTS (silent) → Speak: "Abserny ready."
-      │
-  ┌─ READY STATE ──────────────────────────────────┐
-  │                                                │
-  │  Double Tap ──────► Scan                      │
-  │  Long Press ──────► Repeat Last Result        │
-  │  Swipe Right ─────► Next Mode                 │
-  │  Swipe Left ──────► Previous Mode             │
-  │  Triple Tap ──────► Settings Sheet            │
-  │                                                │
-  └────────────────────────────────────────────────┘
-      │
-  ┌─ SCAN FLOW ────────────────────────────────────┐
-  │                                                │
-  │  Haptic: Warning                              │
-  │      │                                        │
-  │  takePictureAsync (quality 0.35, base64)      │
-  │      │                                        │
-  │  Internet?                                    │
-  │  ┌───┴───────────┐                            │
-  │  │ Yes           │ No                         │
-  │  │               │                            │
-  │ Gemini 2.0    ML Kit                          │
-  │ Flash Lite    On-Device                       │
-  │  └───┬───────────┘                            │
-  │      │                                        │
-  │  Haptic: Heavy → Fade-in text                 │
-  │      │                                        │
-  │  Queued TTS speaks result                     │
-  │      │                                        │
-  └──────► Back to READY STATE ───────────────────┘
+App Launches
+│
+First launch? ──Yes──► Language Picker (swipe R/L)
+│                          │
+│                  Gesture Tutorial (9 steps)
+│                          │
+◄───┴──────────────────────────┘
+│
+Main Camera Screen
+│
+Pre-warm TTS (silent) → Speak: "Abserny ready."
+│
+┌─ READY STATE ──────────────────────────────────┐
+│                                                │
+│  Double Tap ──────► Scan                      │
+│  Long Press ──────► Repeat Last Result        │
+│  Swipe Right ─────► Next Mode                 │
+│  Swipe Left ──────► Previous Mode             │
+│  Triple Tap ──────► Settings Sheet            │
+│                                                │
+└────────────────────────────────────────────────┘
+│
+┌─ SCAN FLOW ────────────────────────────────────┐
+│                                                │
+│  Haptic: Warning                              │
+│      │                                        │
+│  takePictureAsync (quality 0.35, base64)      │
+│      │                                        │
+│  Internet?                                    │
+│  ┌───┴───────────┐                            │
+│  │ Yes           │ No                         │
+│  │               │                            │
+│ Gemini 2.0    ML Kit                          │
+│ Flash Lite    On-Device                       │
+│  └───┬───────────┘                            │
+│      │                                        │
+│  Haptic: Heavy → Fade-in text                 │
+│      │                                        │
+│  Queued TTS speaks result                     │
+│      │                                        │
+└──────► Back to READY STATE ───────────────────┘
 ```
 
 ---
@@ -291,22 +292,22 @@ Abserny exists as multiple **variants**, each adapting the same conceptual pipel
 ### 8.3 Settings Flow (Mobile)
 
 ```
-  Triple Tap → Settings sheet slides up
-      │
-  Three options (swipe to navigate):
-  ┌────────────────────────────────┐
-  │  1. Repeat Tutorial            │
-  │  2. Change Language            │
-  │  3. Close                      │
-  └────────────────────────────────┘
-      │
-  Double tap to select
-      │
-  ┌───┴────────────────────────────────────┐
-  │ Repeat Tutorial → re-runs 9-step flow  │
-  │ Change Language → Language Picker      │
-  │ Close           → back to Ready State  │
-  └────────────────────────────────────────┘
+Triple Tap → Settings sheet slides up
+│
+Three options (swipe to navigate):
+┌────────────────────────────────┐
+│  1. Repeat Tutorial            │
+│  2. Change Language            │
+│  3. Close                      │
+└────────────────────────────────┘
+│
+Double tap to select
+│
+┌───┴────────────────────────────────────┐
+│ Repeat Tutorial → re-runs 9-step flow  │
+│ Change Language → Language Picker      │
+│ Close           → back to Ready State  │
+└────────────────────────────────────────┘
 ```
 
 [↑ Back to Top](#table-of-contents)
@@ -318,7 +319,7 @@ Abserny exists as multiple **variants**, each adapting the same conceptual pipel
 ### 9.1 Signal Layer
 
 ```
-  Gesture  →  PanResponder  →  GestureClassifier  →  Intent
+Gesture  →  PanResponder  →  GestureClassifier  →  Intent
 ```
 
 Handles touch input classification — distinguishing double tap, long press, triple tap, and swipe from raw touch events using timing windows and displacement thresholds.
@@ -335,7 +336,7 @@ Handles touch input classification — distinguishing double tap, long press, tr
 ### 9.2 Perception Layer
 
 ```
-  CameraFrame  →  Base64 JPEG  →  DetectionRouter  →  Inference  →  Output
+CameraFrame  →  Base64 JPEG  →  DetectionRouter  →  Inference  →  Output
 ```
 
 Routes each frame to either Gemini 2.0 Flash Lite (online, natural language) or ML Kit (offline, label-based). Mode determines the prompt and output format.
@@ -352,13 +353,13 @@ Routes each frame to either Gemini 2.0 Flash Lite (online, natural language) or 
 ### 9.3 Reasoning Layer
 
 ```
-  Raw AI Output
-       │
-  Valid? ──No──► Fallback message (language-aware)
-       │ Yes
-  Trim to spoken length (~15 words max)
-       │
-  Queue for TTS
+Raw AI Output
+│
+Valid? ──No──► Fallback message (language-aware)
+│ Yes
+Trim to spoken length (~15 words max)
+│
+Queue for TTS
 ```
 
 Validates model output, applies language-specific fallback messages, and manages the speech queue to prevent overlapping utterances.
@@ -368,9 +369,9 @@ Validates model output, applies language-specific fallback messages, and manages
 ### 9.4 Feedback Layer
 
 ```
-  Intent  →  expo-haptics     (immediate — fires before speech)
-  Result  →  useVoice queue   →  expo-speech
-  Result  →  Animated UI         (fade-in text — supplemental only)
+Intent  →  expo-haptics     (immediate — fires before speech)
+Result  →  useVoice queue   →  expo-speech
+Result  →  Animated UI         (fade-in text — supplemental only)
 ```
 
 Converts intent confirmations into immediate haptic pulses and model results into queued speech. UI animations are supplemental — the app functions completely without them.
@@ -419,11 +420,11 @@ Abserny-Mobile/
 ├── assets/
 │   └── logo.png
 └── hooks/
-    ├── useDetection.js          # Gemini + ML Kit routing, mode prompts
-    ├── useGestures.js           # PanResponder gesture classifier
-    ├── useLanguage.js           # All strings (ar + en), t(), AsyncStorage
-    ├── useModes.js              # Scene / Object / Read / People
-    └── useVoice.js              # Queued TTS — never overlaps utterances
+├── useDetection.js          # Gemini + ML Kit routing, mode prompts
+├── useGestures.js           # PanResponder gesture classifier
+├── useLanguage.js           # All strings (ar + en), t(), AsyncStorage
+├── useModes.js              # Scene / Object / Read / People
+└── useVoice.js              # Queued TTS — never overlaps utterances
 ```
 
 > Structural differences between Desktop and Mobile reflect platform constraints, not conceptual divergence. Both follow the same Signal → Perception → Reasoning → Feedback pipeline.
@@ -529,12 +530,12 @@ Abserny variants are **not forks**. They are contextual embodiments of the same 
 ## 15. Roadmap
 
 ```
-  v1.0 ──────────────────► v1.1 ──────────────────► v2.0
-  Mobile Android            Lottie gesture icons      iOS build
-  Gemini + ML Kit           Waveform visualization    AbsernyVision TFLite
-  Bilingual AR/EN           Scan history              Custom model >80% acc
-  9-step tutorial           Confidence indicator      Wearable integration
-  Settings sheet            Battery-aware quality
+v1.0 ──────────────────► v1.1 ──────────────────► v2.0
+Mobile Android            Lottie gesture icons      iOS build
+Gemini + ML Kit           Waveform visualization    AbsernyVision TFLite
+Bilingual AR/EN           Scan history              Custom model >80% acc
+9-step tutorial           Confidence indicator      Wearable integration
+Settings sheet            Battery-aware quality
 ```
 
 Planned features in priority order:
@@ -555,7 +556,7 @@ Planned features in priority order:
 
 ## 16. Final Notes
 
-> Abserny is not built to impress machines.  
+> Abserny is not built to impress machines.
 > It is built to serve humans who deserve technology that works for them.
 
 If you understand this document, you are ready to contribute.
