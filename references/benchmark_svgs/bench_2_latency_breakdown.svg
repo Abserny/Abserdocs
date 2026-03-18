@@ -1,0 +1,64 @@
+<svg width="740" height="210" viewBox="0 0 740 210" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <style>
+    .f  { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; }
+  </style>
+</defs>
+
+<!-- Chart area: x-axis 0–1400ms mapped to x=140..700 (560px = 1400ms, 1ms=0.4px) -->
+<!-- y rows: Frame capture y=90, Gemini API y=130, TTS init y=170 -->
+
+<!-- Title block -->
+<text class="f" x="0"  y="18" font-size="14" font-weight="500" fill="#1a1a18">End-to-end latency breakdown</text>
+<text class="f" x="0"  y="34" font-size="11" fill="#888780">Median milliseconds per stage &#xB7; 50 trials &#xB7; WiFi 50 Mbps</text>
+
+<!-- Legend -->
+<rect x="0"   y="46" width="10" height="10" rx="2" fill="#378ADD"/>
+<text class="f" x="14"  y="55" font-size="11" fill="#5f5e5a">Frame capture (82 ms)</text>
+<rect x="148" y="46" width="10" height="10" rx="2" fill="#1D9E75"/>
+<text class="f" x="162" y="55" font-size="11" fill="#5f5e5a">Gemini API round-trip (1,218 ms)</text>
+<rect x="352" y="46" width="10" height="10" rx="2" fill="#EF9F27"/>
+<text class="f" x="366" y="55" font-size="11" fill="#5f5e5a">TTS initialization (148 ms)</text>
+
+<!-- Axis line -->
+<line x1="140" y1="185" x2="700" y2="185" stroke="#e0ded6" stroke-width="0.5"/>
+
+<!-- X axis ticks: 0, 200, 400, 600, 800, 1000, 1200, 1400ms -->
+<!-- scale: 560px / 1400ms = 0.4px/ms; x = 140 + val*0.4 -->
+<line x1="140" y1="72" x2="140" y2="185" stroke="#eeece6" stroke-width="0.5"/>
+<line x1="220" y1="72" x2="220" y2="185" stroke="#eeece6" stroke-width="0.5"/>
+<line x1="300" y1="72" x2="300" y2="185" stroke="#eeece6" stroke-width="0.5"/>
+<line x1="380" y1="72" x2="380" y2="185" stroke="#eeece6" stroke-width="0.5"/>
+<line x1="460" y1="72" x2="460" y2="185" stroke="#eeece6" stroke-width="0.5"/>
+<line x1="540" y1="72" x2="540" y2="185" stroke="#eeece6" stroke-width="0.5"/>
+<line x1="620" y1="72" x2="620" y2="185" stroke="#eeece6" stroke-width="0.5"/>
+<line x1="700" y1="72" x2="700" y2="185" stroke="#eeece6" stroke-width="0.5"/>
+
+<!-- X axis labels -->
+<text class="f" x="140" y="198" font-size="10" fill="#888780" text-anchor="middle">0ms</text>
+<text class="f" x="220" y="198" font-size="10" fill="#888780" text-anchor="middle">200ms</text>
+<text class="f" x="300" y="198" font-size="10" fill="#888780" text-anchor="middle">400ms</text>
+<text class="f" x="380" y="198" font-size="10" fill="#888780" text-anchor="middle">600ms</text>
+<text class="f" x="460" y="198" font-size="10" fill="#888780" text-anchor="middle">800ms</text>
+<text class="f" x="540" y="198" font-size="10" fill="#888780" text-anchor="middle">1000ms</text>
+<text class="f" x="620" y="198" font-size="10" fill="#888780" text-anchor="middle">1200ms</text>
+<text class="f" x="700" y="198" font-size="10" fill="#888780" text-anchor="middle">1400ms</text>
+
+<!-- Y axis labels -->
+<text class="f" x="132" y="94"  font-size="11" fill="#888780" text-anchor="end">Frame capture</text>
+<text class="f" x="132" y="130" font-size="11" fill="#888780" text-anchor="end">Gemini API</text>
+<text class="f" x="132" y="166" font-size="11" fill="#888780" text-anchor="end">TTS init</text>
+
+<!-- Bars: x_start=140, width = value*0.4, height=22, y centered -->
+<!-- Frame capture: 82ms → 32.8px wide -->
+<rect x="140" y="80" width="33"  height="22" rx="3" fill="#378ADD"/>
+<text class="f" x="179" y="94" font-size="10" fill="#5f5e5a">82 ms</text>
+
+<!-- Gemini API: 1218ms → 487.2px wide -->
+<rect x="140" y="117" width="487" height="22" rx="3" fill="#1D9E75"/>
+<text class="f" x="633" y="131" font-size="10" fill="#5f5e5a">1,218 ms</text>
+
+<!-- TTS init: 148ms → 59.2px wide -->
+<rect x="140" y="153" width="59"  height="22" rx="3" fill="#EF9F27"/>
+<text class="f" x="205" y="167" font-size="10" fill="#5f5e5a">148 ms</text>
+</svg>

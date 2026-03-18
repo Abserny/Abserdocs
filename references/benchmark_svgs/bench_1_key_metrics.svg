@@ -1,0 +1,31 @@
+<svg width="840" height="110" viewBox="0 0 840 110" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <style>
+    .f { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; }
+  </style>
+</defs>
+
+<!-- Card 1: Median latency -->
+<rect x="0"   y="0" width="200" height="100" rx="8" fill="#f5f4f0"/>
+<text class="f" x="16" y="20"  font-size="11" fill="#5f5e5a">Median latency</text>
+<text class="f" x="16" y="52"  font-size="28" font-weight="500" fill="#1a1a18">1,430 ms</text>
+<text class="f" x="16" y="72"  font-size="10" fill="#888780">Gesture &#x2192; first spoken word</text>
+
+<!-- Card 2: AI output quality -->
+<rect x="214" y="0" width="200" height="100" rx="8" fill="#f5f4f0"/>
+<text class="f" x="230" y="20" font-size="11" fill="#5f5e5a">AI output quality</text>
+<text class="f" x="230" y="52" font-size="28" font-weight="500" fill="#1a1a18">87%</text>
+<text class="f" x="230" y="72" font-size="10" fill="#888780">Spatial language compliance</text>
+
+<!-- Card 3: Gesture accuracy -->
+<rect x="428" y="0" width="200" height="100" rx="8" fill="#f5f4f0"/>
+<text class="f" x="444" y="20" font-size="11" fill="#5f5e5a">Gesture accuracy</text>
+<text class="f" x="444" y="52" font-size="28" font-weight="500" fill="#1a1a18">96%</text>
+<text class="f" x="444" y="72" font-size="10" fill="#888780">Avg across all 6 gestures</text>
+
+<!-- Card 4: Obstacle priority -->
+<rect x="642" y="0" width="198" height="100" rx="8" fill="#f5f4f0"/>
+<text class="f" x="658" y="20" font-size="11" fill="#5f5e5a">Obstacle priority</text>
+<text class="f" x="658" y="52" font-size="28" font-weight="500" fill="#1a1a18">100%</text>
+<text class="f" x="658" y="72" font-size="10" fill="#888780">Hazards mentioned first</text>
+</svg>

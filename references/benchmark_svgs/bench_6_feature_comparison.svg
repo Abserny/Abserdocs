@@ -1,0 +1,135 @@
+<svg width="660" height="374" viewBox="0 0 660 374" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <style>
+    .f  { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; }
+  </style>
+</defs>
+
+<!-- Title -->
+<text class="f" x="0" y="16" font-size="14" font-weight="500" fill="#1a1a18">Feature comparison &#x2014; assistive vision applications</text>
+<text class="f" x="0" y="31" font-size="11" fill="#888780">Key capability dimensions &#xB7; check = fully supported</text>
+
+<!-- Table layout:
+  Col widths: Feature=230, Abserny=86, Lookout=86, SeeingAI=86, Envision=86, BeMyEyes=86
+  Total = 660
+  Row height = 30, starting y=50 for header
+  Features: 9 rows × 30 = 270, ending y=320
+-->
+
+<!-- Header row bg -->
+<rect x="0" y="46" width="660" height="26" rx="0" fill="none"/>
+<line x1="0" y1="72" x2="660" y2="72" stroke="#e0ded6" stroke-width="0.5"/>
+
+<!-- Header labels -->
+<text class="f" x="4"   y="62" font-size="11" font-weight="500" fill="#1a1a18">Feature</text>
+<text class="f" x="278" y="62" font-size="11" font-weight="500" fill="#378ADD" text-anchor="middle">Abserny</text>
+<text class="f" x="364" y="62" font-size="11" font-weight="500" fill="#888780" text-anchor="middle">Lookout</text>
+<text class="f" x="450" y="62" font-size="11" font-weight="500" fill="#888780" text-anchor="middle">Seeing AI</text>
+<text class="f" x="536" y="62" font-size="11" font-weight="500" fill="#888780" text-anchor="middle">Envision</text>
+<text class="f" x="622" y="62" font-size="11" font-weight="500" fill="#888780" text-anchor="middle">Be My Eyes</text>
+
+<!--
+  Rows: y_base = 72 + row*30 + 20 (text baseline)
+  Even rows get light bg
+  Checkmarks: ✓ in green for Abserny, grey for others, − for absent
+-->
+
+<!-- Row 0: Fully gesture-only UI — ab:1 lo:0 se:0 en:0 be:0 -->
+<rect x="0" y="72" width="660" height="30" fill="#f9f8f5"/>
+<text class="f" x="4"   y="91" font-size="12" fill="#1a1a18">Fully gesture-only UI</text>
+<text class="f" x="278" y="91" font-size="14" font-weight="500" fill="#1D9E75" text-anchor="middle">&#x2713;</text>
+<text class="f" x="364" y="91" font-size="13" fill="#cccccc" text-anchor="middle">&#x2212;</text>
+<text class="f" x="450" y="91" font-size="13" fill="#cccccc" text-anchor="middle">&#x2212;</text>
+<text class="f" x="536" y="91" font-size="13" fill="#cccccc" text-anchor="middle">&#x2212;</text>
+<text class="f" x="622" y="91" font-size="13" fill="#cccccc" text-anchor="middle">&#x2212;</text>
+<line x1="0" y1="102" x2="660" y2="102" stroke="#eeece6" stroke-width="0.5"/>
+
+<!-- Row 1: Spatial language in descriptions — ab:1 lo:0 se:0 en:0 be:1 -->
+<text class="f" x="4"   y="121" font-size="12" fill="#1a1a18">Spatial language in descriptions</text>
+<text class="f" x="278" y="121" font-size="14" font-weight="500" fill="#1D9E75" text-anchor="middle">&#x2713;</text>
+<text class="f" x="364" y="121" font-size="13" fill="#cccccc" text-anchor="middle">&#x2212;</text>
+<text class="f" x="450" y="121" font-size="13" fill="#cccccc" text-anchor="middle">&#x2212;</text>
+<text class="f" x="536" y="121" font-size="13" fill="#cccccc" text-anchor="middle">&#x2212;</text>
+<text class="f" x="622" y="121" font-size="14" font-weight="500" fill="#888780" text-anchor="middle">&#x2713;</text>
+<line x1="0" y1="132" x2="660" y2="132" stroke="#eeece6" stroke-width="0.5"/>
+
+<!-- Row 2: Bilingual Arabic + English — ab:1 only -->
+<rect x="0" y="132" width="660" height="30" fill="#f9f8f5"/>
+<text class="f" x="4"   y="151" font-size="12" fill="#1a1a18">Bilingual Arabic + English</text>
+<text class="f" x="278" y="151" font-size="14" font-weight="500" fill="#1D9E75" text-anchor="middle">&#x2713;</text>
+<text class="f" x="364" y="151" font-size="13" fill="#cccccc" text-anchor="middle">&#x2212;</text>
+<text class="f" x="450" y="151" font-size="13" fill="#cccccc" text-anchor="middle">&#x2212;</text>
+<text class="f" x="536" y="151" font-size="13" fill="#cccccc" text-anchor="middle">&#x2212;</text>
+<text class="f" x="622" y="151" font-size="13" fill="#cccccc" text-anchor="middle">&#x2212;</text>
+<line x1="0" y1="162" x2="660" y2="162" stroke="#eeece6" stroke-width="0.5"/>
+
+<!-- Row 3: Offline fallback — ab:1 lo:1 -->
+<text class="f" x="4"   y="181" font-size="12" fill="#1a1a18">Offline fallback mode</text>
+<text class="f" x="278" y="181" font-size="14" font-weight="500" fill="#1D9E75" text-anchor="middle">&#x2713;</text>
+<text class="f" x="364" y="181" font-size="14" font-weight="500" fill="#888780" text-anchor="middle">&#x2713;</text>
+<text class="f" x="450" y="181" font-size="13" fill="#cccccc" text-anchor="middle">&#x2212;</text>
+<text class="f" x="536" y="181" font-size="13" fill="#cccccc" text-anchor="middle">&#x2212;</text>
+<text class="f" x="622" y="181" font-size="13" fill="#cccccc" text-anchor="middle">&#x2212;</text>
+<line x1="0" y1="192" x2="660" y2="192" stroke="#eeece6" stroke-width="0.5"/>
+
+<!-- Row 4: Custom AI prompt engineering — ab:1 only -->
+<rect x="0" y="192" width="660" height="30" fill="#f9f8f5"/>
+<text class="f" x="4"   y="211" font-size="12" fill="#1a1a18">Custom AI prompt engineering</text>
+<text class="f" x="278" y="211" font-size="14" font-weight="500" fill="#1D9E75" text-anchor="middle">&#x2713;</text>
+<text class="f" x="364" y="211" font-size="13" fill="#cccccc" text-anchor="middle">&#x2212;</text>
+<text class="f" x="450" y="211" font-size="13" fill="#cccccc" text-anchor="middle">&#x2212;</text>
+<text class="f" x="536" y="211" font-size="13" fill="#cccccc" text-anchor="middle">&#x2212;</text>
+<text class="f" x="622" y="211" font-size="13" fill="#cccccc" text-anchor="middle">&#x2212;</text>
+<line x1="0" y1="222" x2="660" y2="222" stroke="#eeece6" stroke-width="0.5"/>
+
+<!-- Row 5: Continuous watch mode — ab:1 only -->
+<text class="f" x="4"   y="241" font-size="12" fill="#1a1a18">Continuous watch mode</text>
+<text class="f" x="278" y="241" font-size="14" font-weight="500" fill="#1D9E75" text-anchor="middle">&#x2713;</text>
+<text class="f" x="364" y="241" font-size="13" fill="#cccccc" text-anchor="middle">&#x2212;</text>
+<text class="f" x="450" y="241" font-size="13" fill="#cccccc" text-anchor="middle">&#x2212;</text>
+<text class="f" x="536" y="241" font-size="13" fill="#cccccc" text-anchor="middle">&#x2212;</text>
+<text class="f" x="622" y="241" font-size="13" fill="#cccccc" text-anchor="middle">&#x2212;</text>
+<line x1="0" y1="252" x2="660" y2="252" stroke="#eeece6" stroke-width="0.5"/>
+
+<!-- Row 6: Free / open source — ab:1 lo:1 -->
+<rect x="0" y="252" width="660" height="30" fill="#f9f8f5"/>
+<text class="f" x="4"   y="271" font-size="12" fill="#1a1a18">Free / open source</text>
+<text class="f" x="278" y="271" font-size="14" font-weight="500" fill="#1D9E75" text-anchor="middle">&#x2713;</text>
+<text class="f" x="364" y="271" font-size="14" font-weight="500" fill="#888780" text-anchor="middle">&#x2713;</text>
+<text class="f" x="450" y="271" font-size="13" fill="#cccccc" text-anchor="middle">&#x2212;</text>
+<text class="f" x="536" y="271" font-size="13" fill="#cccccc" text-anchor="middle">&#x2212;</text>
+<text class="f" x="622" y="271" font-size="13" fill="#cccccc" text-anchor="middle">&#x2212;</text>
+<line x1="0" y1="282" x2="660" y2="282" stroke="#eeece6" stroke-width="0.5"/>
+
+<!-- Row 7: Haptic gesture feedback — ab:1 se:1 -->
+<text class="f" x="4"   y="301" font-size="12" fill="#1a1a18">Haptic gesture feedback</text>
+<text class="f" x="278" y="301" font-size="14" font-weight="500" fill="#1D9E75" text-anchor="middle">&#x2713;</text>
+<text class="f" x="364" y="301" font-size="13" fill="#cccccc" text-anchor="middle">&#x2212;</text>
+<text class="f" x="450" y="301" font-size="14" font-weight="500" fill="#888780" text-anchor="middle">&#x2713;</text>
+<text class="f" x="536" y="301" font-size="13" fill="#cccccc" text-anchor="middle">&#x2212;</text>
+<text class="f" x="622" y="301" font-size="13" fill="#cccccc" text-anchor="middle">&#x2212;</text>
+<line x1="0" y1="312" x2="660" y2="312" stroke="#eeece6" stroke-width="0.5"/>
+
+<!-- Row 8: Multi-key API rotation — ab:1 only -->
+<rect x="0" y="312" width="660" height="30" fill="#f9f8f5"/>
+<text class="f" x="4"   y="331" font-size="12" fill="#1a1a18">Multi-key API rotation</text>
+<text class="f" x="278" y="331" font-size="14" font-weight="500" fill="#1D9E75" text-anchor="middle">&#x2713;</text>
+<text class="f" x="364" y="331" font-size="13" fill="#cccccc" text-anchor="middle">&#x2212;</text>
+<text class="f" x="450" y="331" font-size="13" fill="#cccccc" text-anchor="middle">&#x2212;</text>
+<text class="f" x="536" y="331" font-size="13" fill="#cccccc" text-anchor="middle">&#x2212;</text>
+<text class="f" x="622" y="331" font-size="13" fill="#cccccc" text-anchor="middle">&#x2212;</text>
+
+<!-- Bottom border -->
+<line x1="0" y1="342" x2="660" y2="342" stroke="#e0ded6" stroke-width="0.5"/>
+
+<!-- Vertical col dividers -->
+<line x1="235" y1="46" x2="235" y2="342" stroke="#eeece6" stroke-width="0.5"/>
+<line x1="321" y1="46" x2="321" y2="342" stroke="#eeece6" stroke-width="0.5"/>
+<line x1="407" y1="46" x2="407" y2="342" stroke="#eeece6" stroke-width="0.5"/>
+<line x1="493" y1="46" x2="493" y2="342" stroke="#eeece6" stroke-width="0.5"/>
+<line x1="579" y1="46" x2="579" y2="342" stroke="#eeece6" stroke-width="0.5"/>
+
+<!-- Note -->
+<text class="f" x="0" y="360" font-size="10" fill="#888780">Sources: public documentation for all apps as of 2024&#x2013;2025. &#x201C;Gesture-only UI&#x201D; = zero visual interaction required.</text>
+<text class="f" x="0" y="372" font-size="10" fill="#888780">&#x201C;Spatial language&#x201D; = directional terms in output. &#x201C;Offline fallback&#x201D; = core function works without internet access.</text>
+</svg>

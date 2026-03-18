@@ -1,0 +1,95 @@
+<svg width="620" height="340" viewBox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <style>
+    .f { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; }
+  </style>
+</defs>
+
+<!-- Title -->
+<text class="f" x="0" y="18" font-size="14" font-weight="500" fill="#1a1a18">Latency vs. competing assistive apps</text>
+<text class="f" x="0" y="33" font-size="11" fill="#888780">Estimated time to first spoken output (seconds) &#xB7; lower is better</text>
+
+<!-- Legend -->
+<rect x="0"   y="44" width="10" height="10" rx="2" fill="#378ADD"/>
+<text class="f" x="14"  y="53" font-size="11" fill="#5f5e5a">Abserny (measured)</text>
+<rect x="148" y="44" width="10" height="10" rx="2" fill="#888780"/>
+<text class="f" x="162" y="53" font-size="11" fill="#5f5e5a">Competitors (estimated / reported ranges)</text>
+
+<!--
+  Chart area: x=50..610, y=65 (top=8s) to y=270 (bottom=0s)
+  Scale: 205px / 8s = 25.625px per second
+  y = 270 - value*25.625
+
+  Groups (bar width=60, gap=26):
+    Abserny:   x=70  min=0.92 max=2.78   color blue / blue-light
+    Lookout:   x=156 min=1.5  max=3.0    color gray / gray-light
+    SeeingAI:  x=242 min=2.0  max=4.0
+    Envision:  x=328 min=2.0  max=5.0
+    BeMyEyes:  x=414 min=3.0  max=8.0
+-->
+
+<!-- Y grid lines and labels (0,1,2,3,4,5,6,7,8s) -->
+<line x1="50" y1="270" x2="580" y2="270" stroke="#e0ded6" stroke-width="0.5"/>
+<line x1="50" y1="244" x2="580" y2="244" stroke="#eeece6" stroke-width="0.5"/>
+<line x1="50" y1="219" x2="580" y2="219" stroke="#eeece6" stroke-width="0.5"/>
+<line x1="50" y1="193" x2="580" y2="193" stroke="#eeece6" stroke-width="0.5"/>
+<line x1="50" y1="168" x2="580" y2="168" stroke="#eeece6" stroke-width="0.5"/>
+<line x1="50" y1="142" x2="580" y2="142" stroke="#eeece6" stroke-width="0.5"/>
+<line x1="50" y1="117" x2="580" y2="117" stroke="#eeece6" stroke-width="0.5"/>
+<line x1="50" y1="91"  x2="580" y2="91"  stroke="#eeece6" stroke-width="0.5"/>
+<line x1="50" y1="65"  x2="580" y2="65"  stroke="#eeece6" stroke-width="0.5"/>
+
+<text class="f" x="42" y="274" font-size="10" fill="#888780" text-anchor="end">0s</text>
+<text class="f" x="42" y="248" font-size="10" fill="#888780" text-anchor="end">1s</text>
+<text class="f" x="42" y="223" font-size="10" fill="#888780" text-anchor="end">2s</text>
+<text class="f" x="42" y="197" font-size="10" fill="#888780" text-anchor="end">3s</text>
+<text class="f" x="42" y="172" font-size="10" fill="#888780" text-anchor="end">4s</text>
+<text class="f" x="42" y="146" font-size="10" fill="#888780" text-anchor="end">5s</text>
+<text class="f" x="42" y="121" font-size="10" fill="#888780" text-anchor="end">6s</text>
+<text class="f" x="42" y="95"  font-size="10" fill="#888780" text-anchor="end">7s</text>
+<text class="f" x="42" y="69"  font-size="10" fill="#888780" text-anchor="end">8s</text>
+
+<!--
+  Abserny: min=0.92 → y_top_min = 270-0.92*25.625=246.4, height=23.6
+           max=2.78 → total height=2.78*25.625=71.2, range bar from min to max
+  Solid bar = from 0 to min; lighter bar = from min to max (range)
+-->
+
+<!-- Abserny solid: 0→0.92 → height=23.6, y=246 -->
+<rect x="70"  y="246" width="60" height="24" rx="3" fill="#378ADD"/>
+<!-- Abserny range: 0.92→2.78 → height=(2.78-0.92)*25.625=47.6, y=246-47.6=198 -->
+<rect x="70"  y="199" width="60" height="47" rx="3" fill="rgba(55,138,221,0.22)"/>
+<text class="f" x="100" y="290" font-size="10" fill="#5f5e5a" text-anchor="middle">Abserny</text>
+<text class="f" x="100" y="303" font-size="10" fill="#888780" text-anchor="middle">(measured)</text>
+
+<!-- Lookout solid: 0→1.5 → height=38.4, y=231.6 -->
+<rect x="156" y="232" width="60" height="38" rx="3" fill="#888780"/>
+<!-- Lookout range: 1.5→3.0 → height=38.4, y=193 -->
+<rect x="156" y="194" width="60" height="38" rx="3" fill="rgba(136,135,128,0.2)"/>
+<text class="f" x="186" y="290" font-size="10" fill="#5f5e5a" text-anchor="middle">Google</text>
+<text class="f" x="186" y="303" font-size="10" fill="#888780" text-anchor="middle">Lookout</text>
+
+<!-- SeeingAI solid: 0→2.0 → height=51.25, y=218.75 -->
+<rect x="242" y="219" width="60" height="51" rx="3" fill="#888780"/>
+<!-- SeeingAI range: 2→4 → height=51.25 -->
+<rect x="242" y="168" width="60" height="51" rx="3" fill="rgba(136,135,128,0.2)"/>
+<text class="f" x="272" y="290" font-size="10" fill="#5f5e5a" text-anchor="middle">Microsoft</text>
+<text class="f" x="272" y="303" font-size="10" fill="#888780" text-anchor="middle">Seeing AI</text>
+
+<!-- Envision solid: 0→2.0 → height=51.25, y=218.75 -->
+<rect x="328" y="219" width="60" height="51" rx="3" fill="#888780"/>
+<!-- Envision range: 2→5 → height=76.875 -->
+<rect x="328" y="142" width="60" height="77" rx="3" fill="rgba(136,135,128,0.2)"/>
+<text class="f" x="358" y="290" font-size="10" fill="#5f5e5a" text-anchor="middle">Envision</text>
+<text class="f" x="358" y="303" font-size="10" fill="#888780" text-anchor="middle">AI</text>
+
+<!-- BeMyEyes solid: 0→3.0 → height=76.875, y=193.125 -->
+<rect x="414" y="193" width="60" height="77" rx="3" fill="#888780"/>
+<!-- BeMyEyes range: 3→8 → height=128.125 -->
+<rect x="414" y="65"  width="60" height="128" rx="3" fill="rgba(136,135,128,0.2)"/>
+<text class="f" x="444" y="290" font-size="10" fill="#5f5e5a" text-anchor="middle">Be My Eyes</text>
+<text class="f" x="444" y="303" font-size="10" fill="#888780" text-anchor="middle">(AI mode)</text>
+
+<!-- Note -->
+<text class="f" x="0" y="326" font-size="10" fill="#888780">Competitor values are representative estimates from public documentation; Abserny value is measured across 50 trials.</text>
+</svg>

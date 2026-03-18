@@ -1,0 +1,82 @@
+<svg width="660" height="300" viewBox="0 0 660 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <style>
+    .f { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; }
+  </style>
+</defs>
+
+<!--
+  Chart area: x=20..640, y=50 (top=105%) to y=220 (bottom=75%)
+  Scale: 170px / 30% = 5.667px per %
+  y = 220 - (value - 75) * 5.667
+
+  Values: Single=100, Long=100, Double=95, SwipeLR=95, SwipeUp=95, Triple=90
+  Colors: #1D9E75, #1D9E75, #378ADD, #378ADD, #5DCAA5, #EF9F27
+  Bar width=60, centers: 80, 188, 296, 404, 512, 600 → adjusted for 6 bars
+  Actually: x-positions for 6 bars with w=60, gap=22 across 620px range
+  Group start x=50: 50, 132, 214, 296, 378, 460 (left edge)
+-->
+
+<!-- Title -->
+<text class="f" x="0" y="16" font-size="14" font-weight="500" fill="#1a1a18">Gesture recognition accuracy</text>
+<text class="f" x="0" y="31" font-size="11" fill="#888780">Pass rate per gesture type &#xB7; 20 trials each &#xB7; Android device</text>
+
+<!-- Y grid: 75,80,85,90,95,100,105 -->
+<!-- y = 220 - (pct-75)*5.667 -->
+<!-- 75→220, 80→191.7, 85→163.3, 90→135, 95→106.7, 100→78.3, 105→50 -->
+<line x1="20" y1="50"  x2="640" y2="50"  stroke="#eeece6" stroke-width="0.5"/>
+<line x1="20" y1="78"  x2="640" y2="78"  stroke="#eeece6" stroke-width="0.5"/>
+<line x1="20" y1="107" x2="640" y2="107" stroke="#eeece6" stroke-width="0.5"/>
+<line x1="20" y1="135" x2="640" y2="135" stroke="#eeece6" stroke-width="0.5"/>
+<line x1="20" y1="163" x2="640" y2="163" stroke="#eeece6" stroke-width="0.5"/>
+<line x1="20" y1="192" x2="640" y2="192" stroke="#eeece6" stroke-width="0.5"/>
+<line x1="20" y1="220" x2="640" y2="220" stroke="#e0ded6" stroke-width="0.5"/>
+
+<text class="f" x="14" y="54"  font-size="10" fill="#888780" text-anchor="end">105%</text>
+<text class="f" x="14" y="82"  font-size="10" fill="#888780" text-anchor="end">100%</text>
+<text class="f" x="14" y="111" font-size="10" fill="#888780" text-anchor="end">95%</text>
+<text class="f" x="14" y="139" font-size="10" fill="#888780" text-anchor="end">90%</text>
+<text class="f" x="14" y="167" font-size="10" fill="#888780" text-anchor="end">85%</text>
+<text class="f" x="14" y="196" font-size="10" fill="#888780" text-anchor="end">80%</text>
+<text class="f" x="14" y="224" font-size="10" fill="#888780" text-anchor="end">75%</text>
+
+<!-- Single tap: 100% → y=78, height=142 -->
+<rect x="30"  y="78"  width="72" height="142" rx="4" fill="#1D9E75"/>
+<text class="f" x="66"  y="70"  font-size="11" font-weight="500" fill="#085041" text-anchor="middle">100%</text>
+<text class="f" x="66"  y="238" font-size="10" fill="#5f5e5a" text-anchor="middle">Single tap</text>
+<text class="f" x="66"  y="251" font-size="10" fill="#888780" text-anchor="middle">(no-op)</text>
+
+<!-- Long press: 100% -->
+<rect x="122" y="78"  width="72" height="142" rx="4" fill="#1D9E75"/>
+<text class="f" x="158" y="70"  font-size="11" font-weight="500" fill="#085041" text-anchor="middle">100%</text>
+<text class="f" x="158" y="238" font-size="10" fill="#5f5e5a" text-anchor="middle">Long press</text>
+<text class="f" x="158" y="251" font-size="10" fill="#888780" text-anchor="middle">(&#x2265;700ms)</text>
+
+<!-- Double tap: 95% → y=107, height=113 -->
+<rect x="214" y="107" width="72" height="113" rx="4" fill="#378ADD"/>
+<text class="f" x="250" y="99"  font-size="11" font-weight="500" fill="#0c447c" text-anchor="middle">95%</text>
+<text class="f" x="250" y="238" font-size="10" fill="#5f5e5a" text-anchor="middle">Double tap</text>
+<text class="f" x="250" y="251" font-size="10" fill="#888780" text-anchor="middle">(scan)</text>
+
+<!-- Swipe L/R: 95% -->
+<rect x="306" y="107" width="72" height="113" rx="4" fill="#378ADD"/>
+<text class="f" x="342" y="99"  font-size="11" font-weight="500" fill="#0c447c" text-anchor="middle">95%</text>
+<text class="f" x="342" y="238" font-size="10" fill="#5f5e5a" text-anchor="middle">Swipe L/R</text>
+<text class="f" x="342" y="251" font-size="10" fill="#888780" text-anchor="middle">(mode)</text>
+
+<!-- Swipe up: 95% -->
+<rect x="398" y="107" width="72" height="113" rx="4" fill="#5DCAA5"/>
+<text class="f" x="434" y="99"  font-size="11" font-weight="500" fill="#085041" text-anchor="middle">95%</text>
+<text class="f" x="434" y="238" font-size="10" fill="#5f5e5a" text-anchor="middle">Swipe up</text>
+<text class="f" x="434" y="251" font-size="10" fill="#888780" text-anchor="middle">(watch)</text>
+
+<!-- Triple tap: 90% → y=135, height=85 -->
+<rect x="490" y="135" width="72" height="85"  rx="4" fill="#EF9F27"/>
+<text class="f" x="526" y="127" font-size="11" font-weight="500" fill="#633806" text-anchor="middle">90%</text>
+<text class="f" x="526" y="238" font-size="10" fill="#5f5e5a" text-anchor="middle">Triple tap</text>
+<text class="f" x="526" y="251" font-size="10" fill="#888780" text-anchor="middle">(settings)</text>
+
+<!-- Note -->
+<text class="f" x="0" y="272" font-size="10" fill="#888780">Single tap intentionally fires no action (prevents accidental scan during TalkBack touch exploration).</text>
+<text class="f" x="0" y="285" font-size="10" fill="#888780">Triple tap 90% due to 3rd tap occasionally registering as a separate double tap on fast input.</text>
+</svg>

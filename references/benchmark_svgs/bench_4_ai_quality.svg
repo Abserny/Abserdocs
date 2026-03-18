@@ -1,0 +1,65 @@
+<svg width="560" height="290" viewBox="0 0 560 290" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <style>
+    .f { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; }
+  </style>
+</defs>
+
+<!--
+  Chart area: x=20..540, y=50 (top=105%) to y=230 (bottom=70%)
+  Scale: 180px / 35% = ~5.14px per %
+  y = 230 - (value - 70) * 5.143
+
+  Values: Obstacle-first=100, Brevity=94, Priority=91, Spatial=87
+  Bar width=80, group centers at x=100, 215, 330, 445
+-->
+
+<!-- Title -->
+<text class="f" x="0" y="16" font-size="14" font-weight="500" fill="#1a1a18">AI output quality &#x2014; 4 criteria &#xB7; 100 test frames</text>
+<text class="f" x="0" y="31" font-size="11" fill="#888780">Scene mode &#xB7; Gemini 2.0 Flash Lite &#xB7; diverse indoor environments</text>
+
+<!-- Y axis grid: 70,75,80,85,90,95,100,105 -->
+<!-- y = 230 - (pct-70)*5.143 -->
+<!-- 70→230, 75→204.3, 80→178.6, 85→152.9, 90→127.1, 95→101.4, 100→75.7, 105→50 -->
+<line x1="20" y1="50"  x2="540" y2="50"  stroke="#eeece6" stroke-width="0.5"/>
+<line x1="20" y1="76"  x2="540" y2="76"  stroke="#eeece6" stroke-width="0.5"/>
+<line x1="20" y1="101" x2="540" y2="101" stroke="#eeece6" stroke-width="0.5"/>
+<line x1="20" y1="127" x2="540" y2="127" stroke="#eeece6" stroke-width="0.5"/>
+<line x1="20" y1="153" x2="540" y2="153" stroke="#eeece6" stroke-width="0.5"/>
+<line x1="20" y1="179" x2="540" y2="179" stroke="#eeece6" stroke-width="0.5"/>
+<line x1="20" y1="204" x2="540" y2="204" stroke="#eeece6" stroke-width="0.5"/>
+<line x1="20" y1="230" x2="540" y2="230" stroke="#e0ded6" stroke-width="0.5"/>
+
+<text class="f" x="14" y="54"  font-size="10" fill="#888780" text-anchor="end">105%</text>
+<text class="f" x="14" y="80"  font-size="10" fill="#888780" text-anchor="end">100%</text>
+<text class="f" x="14" y="105" font-size="10" fill="#888780" text-anchor="end">95%</text>
+<text class="f" x="14" y="131" font-size="10" fill="#888780" text-anchor="end">90%</text>
+<text class="f" x="14" y="157" font-size="10" fill="#888780" text-anchor="end">85%</text>
+<text class="f" x="14" y="182" font-size="10" fill="#888780" text-anchor="end">80%</text>
+<text class="f" x="14" y="208" font-size="10" fill="#888780" text-anchor="end">75%</text>
+<text class="f" x="14" y="234" font-size="10" fill="#888780" text-anchor="end">70%</text>
+
+<!-- Obstacle-first: 100% → y_top = 230-(100-70)*5.143 = 230-154.3=75.7, height=154.3 -->
+<rect x="60"  y="76"  width="80" height="154" rx="4" fill="#1D9E75"/>
+<text class="f" x="100" y="68"  font-size="11" font-weight="500" fill="#085041" text-anchor="middle">100%</text>
+<text class="f" x="100" y="248" font-size="10" fill="#5f5e5a" text-anchor="middle">Obstacle-first</text>
+<text class="f" x="100" y="260" font-size="10" fill="#888780" text-anchor="middle">ordering</text>
+
+<!-- Brevity: 94% → y_top = 230-(94-70)*5.143 = 230-123.4=106.6, height=123.4 -->
+<rect x="175" y="107" width="80" height="123" rx="4" fill="#5DCAA5"/>
+<text class="f" x="215" y="99"  font-size="11" font-weight="500" fill="#085041" text-anchor="middle">94%</text>
+<text class="f" x="215" y="248" font-size="10" fill="#5f5e5a" text-anchor="middle">Brevity</text>
+<text class="f" x="215" y="260" font-size="10" fill="#888780" text-anchor="middle">compliance</text>
+
+<!-- Priority: 91% → y_top = 230-(91-70)*5.143 = 230-108 = 122, height=108 -->
+<rect x="290" y="122" width="80" height="108" rx="4" fill="#378ADD"/>
+<text class="f" x="330" y="114" font-size="11" font-weight="500" fill="#0c447c" text-anchor="middle">91%</text>
+<text class="f" x="330" y="248" font-size="10" fill="#5f5e5a" text-anchor="middle">Priority</text>
+<text class="f" x="330" y="260" font-size="10" fill="#888780" text-anchor="middle">ordering</text>
+
+<!-- Spatial: 87% → y_top = 230-(87-70)*5.143 = 230-87.4=142.6, height=87.4 -->
+<rect x="405" y="143" width="80" height="87"  rx="4" fill="#EF9F27"/>
+<text class="f" x="445" y="135" font-size="11" font-weight="500" fill="#633806" text-anchor="middle">87%</text>
+<text class="f" x="445" y="248" font-size="10" fill="#5f5e5a" text-anchor="middle">Spatial language</text>
+<text class="f" x="445" y="260" font-size="10" fill="#888780" text-anchor="middle">use</text>
+</svg>
